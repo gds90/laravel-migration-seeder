@@ -32,7 +32,7 @@
                                 <th>Stazione di arrivo</th>
                                 <th>Orario di partenza</th>
                                 <th>Orario di arrivo</th>
-                                <th>In orario</th>
+                                <th>Stato</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -45,7 +45,15 @@
                                     <td>{{ $train->stazione_arrivo }}</td>
                                     <td>{{ $train->orario_partenza }}</td>
                                     <td>{{ $train->orario_arrivo }}</td>
-                                    <td>{{ $train->in_orario == 1 ? 'Sì' : 'No' }}</td>
+                                    <td>
+                                        @if ($train->cancellato)
+                                            Cancellato
+                                        @elseif ($train->in_orario)
+                                            In orario
+                                        @else
+                                            In ritardo
+                                        @endif
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
