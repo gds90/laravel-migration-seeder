@@ -21,8 +21,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h1 class="text-center ">Treni in partenza oggi:</h1>
-                    <table class="table-striped table">
+                    <h1 class="text-center my-4">Treni in partenza oggi:</h1>
+                    <table class="table-striped table border border-1">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -32,6 +32,7 @@
                                 <th>Stazione di arrivo</th>
                                 <th>Orario di partenza</th>
                                 <th>Orario di arrivo</th>
+                                <th>In orario</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -44,6 +45,7 @@
                                     <td>{{ $train->stazione_arrivo }}</td>
                                     <td>{{ $train->orario_partenza }}</td>
                                     <td>{{ $train->orario_arrivo }}</td>
+                                    <td>{{ $train->in_orario == 1 ? 'Sì' : 'No' }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
