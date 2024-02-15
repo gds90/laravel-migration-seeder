@@ -43,8 +43,8 @@
                                     <td>{{ $train->azienda }}</td>
                                     <td>{{ $train->stazione_partenza }}</td>
                                     <td>{{ $train->stazione_arrivo }}</td>
-                                    <td>{{ $train->orario_partenza }}</td>
-                                    <td>{{ $train->orario_arrivo }}</td>
+                                    <td>{{ substr($train->orario_partenza, 0, 5) }}</td>
+                                    <td>{{ substr($train->orario_arrivo, 0, 5) }}</td>
                                     <td>
                                         @if ($train->cancellato)
                                             Cancellato
